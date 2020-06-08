@@ -1,21 +1,21 @@
 <!DOCTYPE html>
-<html
-        xmlns="http://www.w3.org/1999/xhtml"
-        xmlns:th="http://www.thymeleaf.org"
-        lang="en">
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org"
+      xmlns:layout="http://www.ultraq.net.nz/web/thymeleaf/layout"
+      layout:decorator="layout">
 <head>
-    <meta charset="UTF-8">
-    <title>Lab 10</title>
+    <title>Lista ofert</title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 </head>
 <body>
+<section layout:fragment="content">
+    <h2>Zadanie 3</h2>
 
-<h2>Zadanie 3</h2>
+    id : <label th:text="${model_id}"></label> | name : <label th:text="${model_name}"></label> | manufacturer_id : <label th:text="${model_maunf}"></label>
 
-id : <label th:text="${model_id}"></label> | name : <label th:text="${model_name}"></label> | manufacturer_id : <label th:text="${model_maunf}"></label>
+    <br/>
 
-<br/>
-
-id:     <label th:text="${manufacturer_id}"></label> | name:   <label th:text="${manufacturer_name}"></label>
-
+    id:     <label th:text="${manufacturer_id}"></label> | name:   <label th:text="${manufacturer_name}"></label>
+</section>
 </body>
 </html>

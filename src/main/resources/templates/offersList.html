@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org"
+      xmlns:layout="http://www.ultraq.net.nz/web/thymeleaf/layout"
+      layout:decorator="layout">
+    <head>
+        <title>Lista ofert</title>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    </head>
+    <body>
+        <div layout:fragment="content">
+
+            <div id="offerFilter" class="panel panel-default">
+                <div class="panel-heading">Szukaj ofert</div>
+                <div class="panel-body">
+                    <form id="offerFilterForm" action="/" method="get" class="form-inline" th:object="${offerFilter}">
+                        <select class="form-control" th:field="*{manufacturerId}">
+                            <option value="">Marka</option>
+                            <option th:each="manufacturer : ${carManufacturers}" th:value="${manufacturer.id}" th:text="${manufacturer.name}"></option>
+                        </select>
+                        <select class="form-control" th:field="*{modelId}">
+                            <option value="">Model</option>
+                            <option th:each="model : ${carModels}" th:value="${model.id}" th:text="${model.name}"></option>
+                        </select>
+                        <select class="form-control" th:field="*{fuelId}">
+                            <option value="">Rodzaj paliwa</option>
+                            <option th:each="fuel : ${fuelTypes}" th:value="${fuel.id}" th:text="${fuel.name}"></option>
+                        </select>
+
+                        <div class="form-group">
+                            <label class="control-label" for="rokOd">Rok Od:</label>
+                            <input id="rokOd" type="number" class="form-control" th:field="*{yearStart}"/>
+                        </div>
+                        <div class="form-group">
+                            <label class="control-label" for="rokDo">Rok Do:</label>
+                            <input id="rokDo" type="number" class="form-control" th:field="*{yearStop}"/>
+                        </div>
+                        <input type="submit" value="Filtruj" class="form-control"/>
+                    </form>
+                </div>
+            </div>
+
+            <div>
+                <table class="table">
+                    <tr>
+                        <th>Tytuł</th>
+                        <th>Marka</th>
+                        <th>Model</th>
+                        <th>Rocznik</th>
+                        <th>Cena</th>
+                        <th></th>
+                    </tr>
+                    <tr th:each="offer : ${offers}">
+                        <td th:text="${offer.title}"></td>
+                        <td th:text="${offer.model.manufacturer.name}"></td>
+                        <td th:text="${offer.model.name}"></td>
+                        <td th:text="${offer.year}"></td>
+                        <td class="text-right">
+                            <span th:text="${#numbers.formatDecimal(offer.price, 0, 'WHITESPACE', 0, 'COMMA')}"></span>zł
+                        </td>
+                        <td><a th:href="|/offer/${offer.id}|">Pokaż</a></td>
+                    </tr>
+                </table>
+                <a th:if="${page > 0}" th:href="|/offerList/${page - 1}/${pages}|" class="btn btn-danger">BACK</a>
+                <a th:if="${pages - 1 > page}" th:href="|/offerList/${page + 1}/${pages}|" class="btn btn-primary float-right">NEXT</a>
+            </div>
+        </div>
+    </body>
+</html>

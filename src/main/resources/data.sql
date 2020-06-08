@@ -45,4 +45,109 @@ insert into offer(title, model_id, body_style_id, fuel_type_id, year, mileage, e
 (
 'Honda Jazz zadbana', 34, 1, 2, 2012, 17000, 1.2, 90, 3, 'błękitny',
 'Niemiecki dziadek jeździł do kościoła i na działkę. Niepalona, niebita, serwisowana w ASO.', 22500, 2
+),
+(
+'Almera Jazz zadbana', 11, 2, 3, 2015, 17000, 1.2, 90, 3, 'biały',
+'Niemiec płakał jak sprzedawał', 22500, 2
+),
+(
+'Phaeton', 46, 2, 1, 1991, 80000, 1.7, 110, 4, 'czarny',
+'Szybki i skrętny.', 1750, 2
+),
+(
+'Kuga Ford', 55, 2, 1, 2011, 120000, 1.6, 110, 4, 'czerwony',
+'Absolutnie nie jest poobijany', 1750, 2
+),
+(
+'Phaeton', 46, 2, 1, 1991, 80000, 1.7, 110, 4, 'czarny',
+'Szybki i skrętny.', 1750, 2
+),
+(
+'Phaeton', 46, 2, 1, 1991, 80000, 1.7, 110, 4, 'czarny',
+'Szybki i skrętny.', 1750, 2
+),
+(
+'Phaeton', 46, 2, 1, 1991, 80000, 1.7, 110, 4, 'czarny',
+'Szybki i skrętny.', 1750, 2
+),
+(
+'Phaeton', 46, 2, 1, 1991, 80000, 1.7, 110, 4, 'czarny',
+'Szybki i skrętny.', 1750, 2
+),
+(
+'Phaeton', 46, 2, 1, 1991, 80000, 1.7, 110, 4, 'czarny',
+'Szybki i skrętny.', 1750, 2
+),
+(
+'Phaeton', 46, 2, 1, 1991, 80000, 1.7, 110, 4, 'czarny',
+'Szybki i skrętny.', 1750, 2
+),
+(
+'Phaeton', 46, 2, 1, 1991, 80000, 1.7, 110, 4, 'czarny',
+'Szybki i skrętny.', 1750, 2
+),
+(
+'Phaeton', 46, 2, 1, 1991, 80000, 1.7, 110, 4, 'czarny',
+'Szybki i skrętny.', 1750, 2
+),
+(
+'Phaeton', 46, 2, 1, 1991, 80000, 1.7, 110, 4, 'czarny',
+'Szybki i skrętny.', 1750, 2
+),
+(
+'Phaeton', 46, 2, 1, 1991, 80000, 1.7, 110, 4, 'czarny',
+'Szybki i skrętny.', 1750, 2
+),
+(
+'Phaeton', 46, 2, 1, 1991, 80000, 1.7, 110, 4, 'czarny',
+'Szybki i skrętny.', 1750, 2
+),
+(
+'Phaeton', 46, 2, 1, 1991, 80000, 1.7, 110, 4, 'czarny',
+'Szybki i skrętny.', 1750, 2
+),
+(
+'Phaeton', 46, 2, 1, 1991, 80000, 1.7, 110, 4, 'czarny',
+'Szybki i skrętny.', 1750, 2
+),
+(
+'Phaeton', 46, 2, 1, 1991, 80000, 1.7, 110, 4, 'czarny',
+'Szybki i skrętny.', 1750, 2
+),
+(
+'Phaeton', 46, 2, 1, 1991, 80000, 1.7, 110, 4, 'czarny',
+'Szybki i skrętny.', 1750, 2
+),
+(
+'Phaeton', 46, 2, 1, 1991, 80000, 1.7, 110, 4, 'czarny',
+'Szybki i skrętny.', 1750, 2
+),
+(
+'Phaeton', 46, 2, 1, 1991, 80000, 1.7, 110, 4, 'czarny',
+'Szybki i skrętny.', 1750, 2
+),
+(
+'Phaeton', 46, 2, 1, 1991, 80000, 1.7, 110, 4, 'czarny',
+'Szybki i skrętny.', 1750, 2
+),
+(
+'Phaeton', 46, 2, 1, 1991, 80000, 1.7, 110, 4, 'czarny',
+'Szybki i skrętny.', 1750, 2
+),
+(
+'Phaeton', 46, 2, 1, 1991, 80000, 1.7, 110, 4, 'czarny',
+'Szybki i skrętny.', 1750, 2
+),
+(
+'Phaeton', 46, 2, 1, 1991, 80000, 1.7, 110, 4, 'czarny',
+'Szybki i skrętny.', 1750, 2
+),
+(
+'Phaeton', 46, 2, 1, 1991, 80000, 1.7, 110, 4, 'czarny',
+'Szybki i skrętny.', 1750, 2
+),
+(
+'Phaeton', 46, 2, 1, 1991, 80000, 1.7, 110, 4, 'czarny',
+'Szybki i skrętny.', 1750, 2
 );
+

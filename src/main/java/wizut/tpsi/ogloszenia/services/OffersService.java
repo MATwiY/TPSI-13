@@ -1,14 +1,18 @@
 package wizut.tpsi.ogloszenia.services;
 
 import org.springframework.stereotype.Service;
+
 import wizut.tpsi.ogloszenia.jpa.*;
+import wizut.tpsi.ogloszenia.web.OfferFilter;
 
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
 import javax.persistence.TypedQuery;
+import javax.transaction.Transactional;
 import java.util.List;
 
 @Service
+@Transactional
 public class OffersService {
 
     @PersistenceContext
@@ -82,5 +86,82 @@ public class OffersService {
         List<Offer> result = query.getResultList();
 
         return result;
+    }
+
+    public List<Offer> getOffers(OfferFilter filter){
+
+        String jpql = "select cm from Offer cm where cm.title != null ";
+
+        if(filter.getManufacturerId() != null){
+            jpql += "and cm.model.manufacturer.id = " + filter.getManufacturerId() + " ";
+        }
+        if(filter.getModelId() != null){
+            jpql += "and cm.model.id = " + filter.getModelId() + " ";
+        }
+        if(filter.getYearStart() != null){
+            jpql += "and cm.year >= " + filter.getYearStart() + " ";
+        }
+        if(filter.getYearStop() != null){
+            jpql += "and cm.year <= " + filter.getYearStop() + " ";
+        }
+        if(filter.getFuelId() != null){
+            jpql += "and cm.fuelType.id = " + filter.getFuelId() + " ";
+        }
+        jpql += " order by cm.id";
+
+        int maxResult = 2;
+        int firstResult = 0;
+
+        TypedQuery<Offer> query = em.createQuery(jpql, Offer.class);
+        query.setFirstResult(firstResult);
+        query.setMaxResults(maxResult);
+
+        return query.getResultList();
+    }
+
+    public List<Offer> getOffers(OfferFilter filter, int firstResult){
+
+        String jpql = "select cm from Offer cm where cm.title != null ";
+
+        if(filter.getManufacturerId() != null){
+            jpql += "and cm.model.manufacturer.id = " + filter.getManufacturerId() + " ";
+        }
+        if(filter.getModelId() != null){
+            jpql += "and cm.model.id = " + filter.getModelId() + " ";
+        }
+        if(filter.getYearStart() != null){
+            jpql += "and cm.year >= " + filter.getYearStart() + " ";
+        }
+        if(filter.getYearStop() != null){
+            jpql += "and cm.year <= " + filter.getYearStop() + " ";
+        }
+        if(filter.getFuelId() != null){
+            jpql += "and cm.fuelType.id = " + filter.getFuelId() + " ";
+        }
+        jpql += " order by cm.id";
+
+        int maxResult = 20;
+
+        TypedQuery<Offer> query = em.createQuery(jpql, Offer.class);
+        query.setFirstResult(firstResult * maxResult);
+        query.setMaxResults(maxResult);
+
+        return query.getResultList();
+    }
+
+    // zapis do bazy danych
+    public Offer createOffer(Offer offer){
+        em.persist(offer);
+        return offer;
+    }
+
+    public Offer delteOffer(Integer id){
+        Offer offer = em.find(Offer.class, id);
+        em.remove(offer);
+        return offer;
+    }
+
+    public Offer saveOffer(Offer offer){
+        return em.merge(offer);
     }
 }
