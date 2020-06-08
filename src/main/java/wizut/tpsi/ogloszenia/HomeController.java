@@ -117,9 +117,6 @@ public class HomeController {
             List<BodyStyle> bodyStyles = offersService.getBodyStyle();
             List<FuelType> fuelTypes = offersService.getFuelType();
 
-            System.out.println("nie powiodło się");
-            System.out.println(binding);
-
             model.addAttribute("carModels", carModels);
             model.addAttribute("bodyStyles", bodyStyles);
             model.addAttribute("fuelTypes", fuelTypes);
